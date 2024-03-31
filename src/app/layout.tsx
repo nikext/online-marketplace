@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { ClerkProvider } from "@clerk/nextjs";
+import { NavBar } from "./_components/NavBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,8 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>
           <ClerkProvider>
+            <NavBar />
+
             <html lang="en">
               <body>{children}</body>
             </html>
